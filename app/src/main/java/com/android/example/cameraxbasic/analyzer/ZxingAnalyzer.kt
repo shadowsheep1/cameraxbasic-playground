@@ -94,8 +94,8 @@ class ZxingQrCodeAnalyzer(
                             imageToRotate.byteArray[x + y * width] // Fill from top-right toward left (CW)
                     180 -> rotatedData[width * (height - y - 1) + width - x - 1] =
                             imageToRotate.byteArray[x + y * width] // Fill from bottom-right toward up (CW)
-                    270 -> rotatedData[x + y * width] =
-                            imageToRotate.byteArray[x * height + height - y - 1] // The opposite (CCW) of 90 degrees
+                    270 -> rotatedData[y + x * height] =
+                            imageToRotate.byteArray[y * width + width - x - 1] // The opposite (CCW) of 90 degrees
                 }
             }
         }
